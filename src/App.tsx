@@ -1,8 +1,8 @@
-import TaskForm from './components/TaskForm/TaskForm';
-import TaskList from './components/TaskList/TaskList';
+import TaskForm from './containers/TaskList/TaskForm';
+import TaskList from './containers/TaskList/TaskList';
 import './App.css';
 
-function App() {
+const App = () => {
 
   return (
     <div className="container">
@@ -12,4 +12,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

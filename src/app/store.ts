@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { tasksReducer } from '../containers/tasksSlice';
+import { tasksReducer } from '../containers/TaskList/tasksSlice';
 
 export const store = configureStore({
   reducer: {
@@ -8,4 +8,4 @@ export const store = configureStore({
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-export type AppDispach = typeof store.dispatch;
+export type AppDispatch = typeof store.dispatch;
