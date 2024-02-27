@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import {deleteTasks, fetchTasks, statusTasks} from "./tasksThunks";
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import Preloader from "../../components/Preloader/Preloader";
-import BtnSpinner from "../../components/BtnPreloader/BtnPreloader";
+import BtnPreloader from "../../components/BtnPreloader/BtnPreloader";
 
 const TaskList = () => {
   const dispatch = useAppDispatch();
@@ -50,7 +50,7 @@ const TaskList = () => {
                     disabled={loading.deleteLoading}
                     className="delete-btn"
                   >
-                    {loading.deleteLoading ? <BtnSpinner /> : <span>Удалить</span>}
+                    {loading.deleteLoading ? <BtnPreloader /> : <span>Удалить</span>}
                   </button>
                 </div>
               ))}
