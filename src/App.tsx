@@ -1,15 +1,23 @@
 import TaskForm from './containers/TaskList/TaskForm';
 import TaskList from './containers/TaskList/TaskList';
-// import './App.css';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import './App.css';
 
 const App = () => {
 
   return (
     <div className="container">
-      <TaskForm />
-      <TaskList />
+      <div className="phone">
+        <Header />
+        <div className="screen">
+          <TaskForm />
+          <TaskList />
+        </div>
+        <Footer />
+      </div>
     </div>     
-  )
-}
+  );
+};
 
 export default App;

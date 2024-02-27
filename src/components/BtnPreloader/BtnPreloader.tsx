@@ -1,6 +1,6 @@
 const BtnPreloader = () => {
     return (
-        <span>Loading...</span>
+        <span className="form_btn-load">Loading...</span>
     );
 };
 

@@ -8,7 +8,7 @@ interface TasksState {
     deleteLoading: boolean;
     postLoading: boolean;
     putLoading: boolean;
-}
+};
 
 const initialState: TasksState = {
     items: [],
@@ -66,6 +66,7 @@ const tasksSlice = createSlice({
 
         builder.addCase(statusTasks.fulfilled, (state) => {
             state.putLoading = false;
+            state.postLoading = false;
         });
 
         builder.addCase(statusTasks.rejected, (state) => {

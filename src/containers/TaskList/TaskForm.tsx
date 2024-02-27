@@ -3,6 +3,7 @@ import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {fetchTasks, addTasks} from "./tasksThunks";
 import Preloader from "../../components/Preloader/Preloader";
 import BtnPreloader from "../../components/BtnPreloader/BtnPreloader";
+import './Task.css';
 
 const TaskForm = () => {
   const dispatch = useAppDispatch();
@@ -27,18 +28,19 @@ const TaskForm = () => {
       {loading.fetchLoading ? (
         <Preloader />
       ) : (
-        <form onSubmit={taskRequest}>
+        <form onSubmit={taskRequest} className='form'>
           <div>
             <input
               type="text"
               name="title"
+              className='form_input'
               onChange={dataChanged}
               placeholder="Новая задача..."
               required
             />
           </div>
-          <button type="submit" disabled={loading.postLoading}>
-            {loading.postLoading ? <BtnPreloader /> : <span>Отправить</span>}
+          <button type="submit" disabled={loading.postLoading} className='form_btn'>
+            {loading.postLoading ? <BtnPreloader /> : <span className='form_btn-span'></span>}
           </button>
         </form>
       )}

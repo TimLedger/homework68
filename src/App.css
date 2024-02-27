@@ -1,0 +1,26 @@
+.phone{
+  width: 330px;
+  height: 600px;
+  border: 1px solid white;
+  background: #333;
+  border-radius: 30px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.screen{
+  height: 90vh;
+  padding: 50px 15px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

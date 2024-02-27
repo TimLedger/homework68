@@ -1,0 +1,31 @@
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 5px 25px 3px;
+    font-size: 12px;
+    backdrop-filter: blur(10px);
+    background: rgb(255, 255, 255, 0.1);
+}
+
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-icons{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    font-size: 12px;
+    align-items: center;
+}
+
+.camera{
+    width: 15px;
+    height: 15px;
+    background: radial-gradient( #333, #000);
+    border-radius: 50%;
+}
+

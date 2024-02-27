@@ -1,0 +1,35 @@
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: #333;
+    backdrop-filter: blur(10px);
+    background: rgb(255, 255, 255, 0.1);
+}
+
+.footer-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-home{
+    text-align: center;
+    font-size: 18px;
+    color: rgb(145, 145, 145);
+    border-radius: 35%;
+    padding: 3px 15px;
+    transition: 0.3s;
+}
+
+.button-home:hover{
+    color: rgb(145, 145, 145);
+    background: rgba(66, 66, 66, 0.3);
+    transition: 0.3s;
+}
+
+.button-home:active{
+    color: rgb(145, 145, 145);
+    background: #333;
+    transition: 0.3s;
+}

@@ -3,6 +3,7 @@ import {deleteTasks, fetchTasks, statusTasks} from "./tasksThunks";
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import Preloader from "../../components/Preloader/Preloader";
 import BtnPreloader from "../../components/BtnPreloader/BtnPreloader";
+import './Task.css';
 
 const TaskList = () => {
   const dispatch = useAppDispatch();
@@ -24,7 +25,7 @@ const TaskList = () => {
   };
 
   return (
-    <div className="task-list-container">
+    <div>
       {loading.fetchLoading ? (
         <Preloader />
       ) : (
@@ -32,29 +33,29 @@ const TaskList = () => {
           {tasks.length < 1 ? (
             <h2>Задач еще нет!</h2>
           ) : (
-            <div>
+            <ul className="task-list-content">
               {tasks.map((task, index) => (
-                <div className="task-item" key={index}>
-                  <p>{task.title}</p>
-                  <div className="task-status">
-                    {task.status ? <span className="status-done">done</span> : <span className="status-not-done">not done</span>}
-                  </div>
-                  <input
-                    type="checkbox"
-                    name="status"
-                    onChange={() => changeRequest(task.id)}
-                    checked={task.status}
-                  />
+                <li className={`task ${task.status ? 'completed' : ''}`} key={index}>
+                  <label className='task-label'>
+                    <input
+                      type="checkbox"
+                      name="status"
+                      onChange={() => changeRequest(task.id)}
+                      checked={task.status}
+                    />
+                    <span className="toggle"></span>
+                    <span className="text" title={task.title}>{task.title}</span>
+                  </label>
                   <button
                     onClick={() => deleteRequest(task.id)}
                     disabled={loading.deleteLoading}
-                    className="delete-btn"
+                    className="delete"
                   >
                     {loading.deleteLoading ? <BtnPreloader /> : <span>Удалить</span>}
                   </button>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           )}
         </div>
       )}
